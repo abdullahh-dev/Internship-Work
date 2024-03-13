@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="flex">
+    <div class="signup-container">
+      <h2>Sign Up</h2>
+      <form (ngSubmit)="signUp()" [formGroup]="signUpForm">
+        <div class="form-group">
+          <label for="username">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+          <p
+            *ngIf="
+              signUpForm.get('email').touched && !signUpForm.get('email').valid
+            "
+            class="text-danger"
+          >
+            The Email is invalid. Please Enter a Valid One.
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+        <p
+          *ngIf="
+            !signUpForm.get('password').valid &&
+            signUpForm.get('password').dirty
+          "
+          class="text-danger"
+        >
+          Password too short. (Min 8 characters)
+        </p>
+        <div class="form-group">
+          <label for="password">Confirm Password:</label>
+          <input
+            class="form-contr"
+            type="password"
+            id="c-password"
+            formControlName="confirm_password"
+          />
+          <p
+            *ngIf="
+              signUpForm.get('password').value !==
+                signUpForm.get('confirm_password').value &&
+              signUpForm.get('confirm_password').dirty
+            "
+            class="mt-2 text-danger fs-xl"
+          >
+            Password doesn't match
+          </p>
+        </div>
+        <div class="form-group">
+          <input
+            class="mt-3 text-white"
+            type="file"
+            formControlName="profile"
+            (change)="onImagePicked($event)"
+          />
+        </div>
+        <div *ngIf="errMsg">
+          <p class="text-danger">Email Already Exists.</p>
+        </div>
+        <button class="btn text-bg-primary" type="submit">
+          Create An Account
+        </button>
+        <div class="links">
+          <p>Already Have An Account?</p>
+          <span class="separator">|</span>
+          <button routerLink="/login">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.main-content {
+  width: 100%;
+  height: max-content;
+  padding: 0px;
+  .page-wrapper {
+    padding: 25px;
+    .header {
+      .title {
+        font-weight: 600;
+        font-size: 20px;
+      }
+      p {
+        font-size: 13px;
+        margin-top: 10px;
+      }
+    }
+
+    .header-links {
+      a {
+        text-decoration: none;
+        color: gray;
+        font-size: 14px;
+      }
+    }
+  }
+  .card {
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    .card-header {
+      border: 0;
+      padding: 25px 20px;
+      background-color: inherit;
+      border-radius: 20px;
+
+      h5 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      p {
+        color: #919aa3;
+        font-size: 13px;
+      }
+    }
+    .card-block {
+      overflow: auto;
+      padding: 20px;
+      label {
+        select {
+          width: 60px;
+          padding-inline: 15px;
+        }
+      }
+
+      table {
+        font-size: 0.875em;
+      }
+    }
+  }
+}

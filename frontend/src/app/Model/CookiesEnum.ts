@@ -1,0 +1,3 @@
+class CookieEnum {
+  Token: 'jwt';
+}

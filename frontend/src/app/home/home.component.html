@@ -1,0 +1,58 @@
+<div class="navbar">
+  <div class="d-flex position-relative w-100">
+    <div
+      class="d-flex align-items-center justify-content-between navbar-logo text-white"
+    >
+      <div class="logo"><h5>Logo</h5></div>
+      <a class="text-white" href=""><i class="bi bi-toggle-off"></i></a>
+    </div>
+    <div
+      class="d-flex justify-content-between align-items-center bg-white px-1 w-100"
+    >
+      <div class="left-side">
+        <a href=""> <i class="bi-search"></i></a>
+        <a href=""><i class="bi-textarea-resize"></i></a>
+      </div>
+      <div class="right-side">
+        <a href=""> <i class="bi-bell"></i></a>
+        <a href=""><i class="bi-chat"></i></a>
+        <div class="profile-pic d-inline" (click)="toggleProfilePopup()">
+          <img class="mx-1" [src]="imagesUrl + imagePath" alt="" />
+          <span>{{ username }}</span>
+          <i class="bi bi-chevron-down"></i>
+          <div
+            *ngIf="isProfilePopupOpen"
+            class="profile-popup position-absolute d-flex flex-column"
+          >
+            <a href="/userProfile"><i class="bi bi-person-fill"></i>Profile</a>
+            <a href="/setings"><i class="bi bi-gear-fill"></i>Settings</a>
+            <a (click)="logout()"><i class="bi bi-box-arrow-left"></i>Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex">
+  <div class="side-navbar position-fixed">
+    <ul class="d-flex flex-column gap-4 p-3">
+      <li>
+        <i class="bi-house"></i>
+        <a routerLink="dashboard"> Dashboard</a>
+      </li>
+      <li>
+        <i class="bi bi-table"></i>
+        <a routerLink="table">Table</a>
+      </li>
+      <li>
+        <i class="bi bi-person-fill"></i>
+        <a routerLink="user-profile">User Profile</a>
+      </li>
+    </ul>
+  </div>
+  <div class="body overflow-hidden d-inline-block">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

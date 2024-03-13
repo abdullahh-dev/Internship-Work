@@ -1,0 +1,92 @@
+<div class="user-profile-page">
+  <div class="main">
+    <div class="wrapper">
+      <div class="header">
+        <div class="row d-flex justify-content-between align-items-end">
+          <div class="col-lg-6 col-md-12 text-lg-start text-center">
+            <h5>User Profile</h5>
+            <span>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est,
+              soluta.
+            </span>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex gap-2">
+            <a href=""><i class="bi-house"></i></a>
+            <span>/ <a href="">User Profile</a> /</span>
+            <a href="">User Profile</a>
+          </div>
+        </div>
+      </div>
+      <!-- User Cover Picture Info -->
+      <div class="user-profile-body">
+        <div class="flex-lg-row flex-sm-column gap-5">
+          <div class="col-md-12">
+            <div class="cover-image-section">
+              <div class="bg-image">
+                <img
+                  class="w-100 object-fit-cover"
+                  src="assets\images\cover.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-info-section">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="media-left d-flex gap-3">
+                      <div class="user-profilepic-section">
+                        <img
+                          class="w-100 h-100"
+                          src="/assets/images/profile.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="text-white">
+                        <h5 class="fs-5">Muhammad Abdullah</h5>
+                        <p class="fs-6">Web Developer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="media-right h-100 text-end d-flex justify-content-end align-items-center"
+                    >
+                      <button><i class="bi-plus"></i> Follow</button>
+                      <button><i class="bi-chat-left-fill"></i> Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tab-header bg-white">
+            <ul class="d-flex p-0 flex-sm-column">
+              <li>
+                <a routerLinkActive="active" routerLink="personal-info"
+                  >Personal Info</a
+                >
+                <div routerLinkActive="active" class="slide"></div>
+              </li>
+              <li>
+                <a routerLink="user-services" routerLinkActive="active"
+                  >User's Services</a
+                >
+                <div routerLickActive="active" class="slide"></div>
+              </li>
+              <li><a>User's Contacts</a></li>
+              <li><a>Reviews</a></li>
+            </ul>
+          </div>
+          <div class="card mb-4">
+            <button (click)="getUsers()">Get all User Data</button>
+          </div>
+          <div class="table content"><router-outlet></router-outlet></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
